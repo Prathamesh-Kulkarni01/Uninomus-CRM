@@ -8,9 +8,11 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import SearchIcon from "@mui/icons-material/Search";
+// import SearchIcon from "@mui/icons-material/Search";
 import { useProSidebar } from "react-pro-sidebar";
-import Onboarding from "../onboarding/onboarding";
+import NewEventButton from "../NewEvent/NewEventFormWithButton";
+
+
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -28,7 +30,7 @@ const Topbar = () => {
             <MenuOutlinedIcon />
           </IconButton>
         )}
-        <Box
+        {/* <Box
           display="flex"
           backgroundColor={colors.primary[400]}
           p={0.2}
@@ -38,11 +40,11 @@ const Topbar = () => {
           <IconButton type="button">
             <SearchIcon />
           </IconButton>
-        </Box>
+        </Box> */}
          {/* TODO:Make Event Onboarding  */}
-      <Onboarding/>
       </Box>
       <Box display="flex">
+      <NewEventButton/>
         <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === "dark" ? (
             
