@@ -17,17 +17,21 @@ import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
-
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import SwitchRightOutlinedIcon from "@mui/icons-material/SwitchRightOutlined";
 import SwitchLeftOutlinedIcon from "@mui/icons-material/SwitchLeftOutlined";
+import PaymentsTwoToneIcon from '@mui/icons-material/PaymentsTwoTone';
+import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import EmojiEventsTwoToneIcon from '@mui/icons-material/EmojiEventsTwoTone';
+import EventSeatTwoToneIcon from '@mui/icons-material/EventSeatTwoTone';
+import EventTwoToneIcon from '@mui/icons-material/EventTwoTone';
+
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
   return (
     <MenuItem
       active={selected === title}
@@ -144,7 +148,7 @@ const MyProSidebar = () => {
                   width="100px"
                   height="100px"
                   src="https://th.bing.com/th/id/OIP.tei9Vsc8styOGZ9nN0I3RAHaE8?pid=ImgDet&rs=1"
-                  style={{ cursor: "pointer", borderRadius: "50%",position: "center",}}
+                  style={{ cursor: "pointer", borderRadius: "50%", position: "center", }}
                 />
               </Box>
               <Box textAlign="center">
@@ -212,9 +216,32 @@ const MyProSidebar = () => {
               setSelected={setSelected}
             />
             <Item
+              title="Event"
+              to="/event"
+              icon={<EventTwoToneIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
               title="Calendar"
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Competition"
+              to="/competition"
+              icon={<EmojiEventsTwoToneIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item title="Booking" to="/booking" icon={<EventAvailableIcon />} selected={selected}
+              setSelected={setSelected} />
+            <Item
+              title="Payment"
+              to="/payment"
+              icon={<PaymentsTwoToneIcon />}
               selected={selected}
               setSelected={setSelected}
             />
